@@ -6,18 +6,15 @@
     <body>
         <header>
             <h1><a href="/">Django First Blog</a></h1>
+            <h2><em>Posts information from Database</em></h2>
         </header>
+        <div class="">
+          {% for post in posts %}
 
-        <article>
-            <time>published: 01.04.2021, 09:00</time>
-            <h2><a href="">My first post</a></h2>
-            <p>This is first blog, text between paragraph tag </p>
-        </article>
-
-        <article>
-            <time>published: 01.04.2021, 10:00</time>
-            <h2><a href="">My second post</a></h2>
-            <p>This is second blog, text between paragraph tag.</p>
-        </article>
+          <h3>Post published date: {{post.published_date}}</h3>
+          <p>Post title: {{post.title}}</p>
+          <p>Creation Date: {{post.creation_date}}</p>
+          {%endfor%}
+        </div>
     </body>
 </html>
